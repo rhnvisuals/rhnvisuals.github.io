@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rhen Armenta</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Reset body and html to ensure full-page dark background */
+    body, html {
+      overflow: auto; /* Allow scrolling */
+      height: auto; /* Allow full height for scrolling */
+      background-color: #121212; /* Dark background color */
+      color: #ffffff; /* White text color for contrast */
+    }
+
+    /* Adjust container styling */
+    .container {
+      text-align: center;
+    }
+
+    /* Circle frame styling */
+    .circle-frame {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 150px auto 0; /* Adjust margin as needed */
+    }
+
+    /* Circle frame image styling */
+    .circle-frame img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Heading styling */
+    h3 {
+      font-size: 35px; /* Adjust font size for h3 */
+    }
+
+    /* Typing effect styling */
+    .typing {
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: 35px; /* Adjust font size for typing text */
+      border-right: .15em solid orange; /* Typewriter cursor */
+      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    /* Keyframes for typing animation */
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: orange; }
+    }
+
+    /* Video Player Section styling */
+    .video-player {
+      background-color: #121212; /* Dark background color */
+      padding: 20px; /* Add padding for better spacing */
+      text-align: center; /* Center align the content */
+      margin: 50px auto; /* Center the section and space out from other sections */
+    }
+
+    /* Video frame to maintain aspect ratio */
+    .video-frame {
+      position: relative;
+      width: 100%;
+      max-width: 960px; /* Maximum width of the video frame */
+      padding-top: 56.25%; /* 16:9 Aspect Ratio (100% / 16 * 9 = 56.25%) */
+      margin: 0 auto; /* Center the video frame */
+    }
+
+    /* Video element styling */
+    .video-frame video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the entire container */
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top opaque-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNav">
+          <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="#">Rhen Armenta</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNav">
+        <ul class="nav navbar-nav pull-right">
+          <li><a href="about.html" class="page-scroll">About</a></li>
+          <li><a href="portfolio.html" class="page-scroll">Portfolio</a></li>
+          <li><a href="contact.html" class="page-scroll">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <section class="banner">
+    <div class="container">
+      <div class="circle-frame">
+        <img src="assets/profile-pic (1).png" alt="Picture"> <!-- Update this path -->
+      </div>
+      <h3><span style="font-size: 35px;">Hello, I Am : </span> <span class="typing"></span></h3>
+      <p>A Full Time Video Editor, Graphics Designer & A Freelance Dj</p>
+      <p>Based in Santa Maria Bulacan, Philippines.</p>
+    </div>
+  </section>
+
+  <!-- Video Player Section -->
+  <section class="video-player">
+    <div class="container">
+      <div class="video-frame">
+        <video controls>
+          <source src="assets/video1000.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    const roles = ["Rhen","Graphics Designer", "Video Editor"];
+    let index = 0;
+    const typingElement = document.querySelector('.typing');
+
+    function typeRole() {
+      typingElement.textContent = ''; // Clear previous content
+      const role = roles[index];
+      let charIndex = 0;
+      const typingInterval = setInterval(function() {
+        if (charIndex < role.length) {
+          typingElement.textContent += role.charAt(charIndex);
+          charIndex++;
+        } else {
+          clearInterval(typingInterval);
+          setTimeout(typeRole, 2000); // Wait 2 seconds before typing the next role
+        }
+      }, 100); // Typing speed: 100 milliseconds per character
+      index = (index + 1) % roles.length; // Loop through roles
+    }
+
+    typeRole(); // Start typing the roles
+  </script>
+</body>
+</html>
