@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="./style.css">
   <style>
     body {
-      background-color: #222; /* Dark background color */
-      color: #fff; /* Text color */
+      background-color: #222; 
+      color: #fff; 
     }
     .navbar {
-      color: black; /* Change navbar font color to black */
+      color: black; 
     }
 
     .container {
@@ -28,7 +28,7 @@
       height: 200px;
       border-radius: 50%;
       overflow: hidden;
-      margin: 150px auto 0; /* Adjust margin as needed */
+      margin: 150px auto 0;
     }
 
     .circle-frame img {
@@ -37,14 +37,14 @@
     }
 
     h3 {
-      font-size: 35px; /* Adjust font size for h3 */
+      font-size: 35px;
     }
 
     .typing {
       overflow: hidden;
       white-space: nowrap;
-      font-size: 35px; /* Adjust font size for typing text */
-      border-right: .15em solid orange; /* Typewriter cursor */
+      font-size: 35px; 
+      border-right: .15em solid orange; 
       animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
     }
 
@@ -58,7 +58,7 @@
       50% { border-color: orange; }
     }
     
-    /* Add spacing between videos */
+    
     .video-container {
       margin-bottom: 20px;
       display: flex;
@@ -66,11 +66,11 @@
       align-items: center;
       width: 100%;
       position: relative;
-      padding-top: 100%; /* 1:1 Aspect Ratio (square) */
-      background-color: #000; /* Set background color to make container visible */
+      padding-top: 100%; 
+      background-color: #000; 
     }
     
-    /* Make video player 1:1 px */
+    
     .video-container video {
       max-width: 100%;
       max-height: 100%;
@@ -79,19 +79,19 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1; /* Ensure video is clickable */
+      z-index: 1; 
     }
     
-    /* Style for video popup */
+    
     .video-popup {
       display: none;
       position: fixed;
-      top: 15%; /* Adjust top spacing */
+      top: 15%; 
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.8); /* Dark background */
-      z-index: 2000; /* Ensure it's above other content */
+      background: rgba(0, 0, 0, 0.8); 
+      z-index: 2000; 
       overflow: auto;
     }
     
@@ -104,7 +104,7 @@
       margin: auto;
     }
 
-    /* Play button style */
+   
     .play-button {
       position: absolute;
       top: 50%;
@@ -118,7 +118,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      z-index: 2; /* Ensure play button is clickable */
+      z-index: 2; 
     }
     
     .play-button i {
@@ -158,8 +158,10 @@
 <div class="no-padding text-center" id="portfolio">
  <div class="container">
    <h1>Portfolio</h1>
-    <hr></hr>
+   <hr></hr>
   </div>
+   <h3>Explore My Works</h3>
+    
  
   <div class="container-fluid">
     <div class="row no-gutter">
@@ -266,19 +268,19 @@
     video.addEventListener('loadedmetadata', function() {
       var aspectRatio = video.videoWidth / video.videoHeight;
       if (aspectRatio > 1.0) {
-        // Horizontal video
+        
         videoPopup.style.display = 'block';
         popupVideo.src = src;
         popupVideo.play();
-        popupVideo.style.height = '56.25vw'; /* 16:9 aspect ratio */
+        popupVideo.style.height = '56.25vw'; 
       } else if (aspectRatio < 1.0) {
-        // Portrait video
+        
         videoPopup.style.display = 'block';
         popupVideo.src = src;
         popupVideo.play();
-        popupVideo.style.height = '177.78vh'; /* 9:16 aspect ratio */
+        popupVideo.style.height = '177.78vh'; 
       } else {
-        // Square video
+        
         videoPopup.style.display = 'block';
         popupVideo.src = src;
         popupVideo.play();
