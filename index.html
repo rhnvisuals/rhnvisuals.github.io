@@ -15,8 +15,6 @@
       height: auto; 
       background-color: #121212;
       color: #ffffff; 
-      margin: 0;
-      padding: 0;
     }
     .container {
       text-align: center;
@@ -51,31 +49,26 @@
       50% { border-color: orange; }
     }
     .video-player {
-      width: 100%;
-      height: 100vh; /* Ensures the video player takes up the full viewport height */
-      background-color: #121212;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-      position: relative;
-      overflow: hidden; /* Prevents overflow of the video player */
-      transition: transform 0.5s ease, opacity 0.5s ease;
+      background-color: #121212; 
+      padding: 20px; 
+      text-align: center;
+      margin: 50px auto; 
+      transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for scaling */
     }
     .video-frame {
       position: relative;
       width: 100%;
-      height: 100%;
+      max-width: 960px; 
+      padding-top: 56.25%; /* Maintain aspect ratio */
+      margin: 0 auto; 
     }
     .video-frame video {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the video covers the frame, may crop the video */
-    }
-    .banner {
-      margin-top: 50px;
-      padding: 20px;
-      text-align: center;
+      object-fit: cover; 
     }
   </style>
 </head>
@@ -99,12 +92,14 @@
   </div>
 
   <!-- Video Player Section -->
-  <section class="video-player" id="videoPlayer">
-    <div class="video-frame">
-      <video controls>
-        <source src="assets/video1000.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+  <section class="video-player">
+    <div class="container">
+      <div class="video-frame">
+        <video controls>
+          <source src="assets/video1000.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </div>
   </section>
 
@@ -146,9 +141,9 @@
     typeRole();
 
     window.addEventListener('scroll', function() {
-      const videoPlayer = document.getElementById('videoPlayer');
+      const videoPlayer = document.querySelector('.video-player');
       const scrollY = window.scrollY;
-      const maxScroll = 500;
+      const maxScroll = 500; // Adjust this value to control when the scaling effect starts
       const scale = Math.max(0.5, 1 - scrollY / maxScroll);
       const opacity = Math.max(0, 1 - scrollY / maxScroll);
 
