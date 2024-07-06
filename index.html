@@ -11,20 +11,17 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
   <link rel="stylesheet" href="./style.css">
   <style>
-  
     body, html {
       overflow: auto;
       height: auto; 
       background-color: #121212;
       color: #ffffff; 
+      margin: 0;
+      padding: 0;
     }
-
-   
     .container {
       text-align: center;
     }
-
-   
     .circle-frame {
       width: 200px;
       height: 200px;
@@ -32,19 +29,13 @@
       overflow: hidden;
       margin: 150px auto 0; 
     }
-
-    /* Circle frame image styling */
     .circle-frame img {
       width: 100%;
       height: auto;
     }
-
-   
     h3 {
       font-size: 35px; 
     }
-
-    
     .typing {
       overflow: hidden;
       white-space: nowrap;
@@ -52,35 +43,30 @@
       border-right: .15em solid orange; 
       animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
     }
-
-  
     @keyframes typing {
       from { width: 0; }
       to { width: 100%; }
     }
-
     @keyframes blink-caret {
       from, to { border-color: transparent; }
       50% { border-color: orange; }
     }
-
-    /* Video Player Section styling */
     .video-player {
       background-color: #121212; 
-      padding: 20px; /
       text-align: center;
-      margin: 50px auto; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh; 
+      z-index: 999;
+      transition: transform 0.3s, width 0.3s, height 0.3s, background-color 0.3s;
     }
-
     .video-frame {
       position: relative;
       width: 100%;
-      max-width: 960px; 
-      padding-top: 56.25%; 
-      margin: 0 auto; 
+      height: 100%;
     }
-
-   
     .video-frame video {
       position: absolute;
       top: 0;
@@ -110,6 +96,18 @@
     </div>
   </div>
 
+  <!-- Video Player Section -->
+  <section class="video-player" id="videoPlayer">
+    <div class="container">
+      <div class="video-frame">
+        <video controls>
+          <source src="assets/video1000.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
   <!-- Banner -->
   <section class="banner">
     <div class="container">
@@ -122,23 +120,8 @@
     </div>
   </section>
 
-  <!-- Video Player Section -->
-  <section class="video-player">
-    <div class="container">
-      <div class="video-frame">
-        <video controls>
-          <source src="assets/video1000.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </div>
-  </section>
-
- 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <script>
     const roles = ["Rhen","Graphics Designer", "Video Editor"];
     let index = 0;
@@ -161,6 +144,21 @@
     }
 
     typeRole();
+
+    window.addEventListener('scroll', function() {
+      const videoPlayer = document.getElementById('videoPlayer');
+      if (window.scrollY > 50) {
+        videoPlayer.style.transform = 'scale(0.5)';
+        videoPlayer.style.width = '50%';
+        videoPlayer.style.height = '50%';
+        videoPlayer.style.backgroundColor = 'transparent';
+      } else {
+        videoPlayer.style.transform = 'scale(1)';
+        videoPlayer.style.width = '100%';
+        videoPlayer.style.height = '100vh';
+        videoPlayer.style.backgroundColor = '#121212';
+      }
+    });
   </script>
 </body>
 </html>
