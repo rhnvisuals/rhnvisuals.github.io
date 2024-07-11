@@ -169,32 +169,32 @@ hr{
 
 .container {
   text-align: center;
-  margin-top: 0; /* Add margin to the top */
+  margin-top: 0; 
 }
 
 .circle-frame {
-  width: 200px; /* Adjust size of the circle */
-  height: 200px; /* Adjust size of the circle */
-  border-radius: 10%; /* Make the border radius half of the width/height to create a circle */
-  overflow: hidden; /* Hide overflow content */
-  margin: 0 auto; /* Center the circle-frame horizontally */
+  width: 200px; 
+  height: 200px; 
+  border-radius: 10%; 
+  overflow: hidden; 
+  margin: 0 auto; 
 }
 
 .circle-frame img {
-  width: 10%; /* Make the image fill the circle frame */
-  height: auto; /* Maintain aspect ratio */
+  width: 10%; 
+  height: auto; 
 }
 
 .banner {
-  margin-bottom: 10px; /* Add margin to the bottom of the banner */
+  margin-bottom: 10px; 
 }
 
 .banner h3 {
-  margin-top: 0; /* Remove default margin from h3 */
+  margin-top: 0; 
 }
 
 .banner p {
-  margin-bottom: 10px; /* Add margin to the bottom of each paragraph */
+  margin-bottom: 10px; 
 }
 
 body {
@@ -202,14 +202,14 @@ body {
   padding: 0;
   background-position: center bottom;
   background-size: cover;
-  background-attachment: fixed; /* Fix the background position */
+  background-attachment: fixed; 
 }
 
 .banner {
   padding-top: 50px;
 }
 
-/* Add this CSS to remove the white space at the bottom */
+
 html, body {
   height: 100%;
 }
@@ -229,7 +229,6 @@ html, body {
   margin-top: 20px;
 }
 
-/* Adjust margin-top for the paragraphs */
 .banner p {
   margin-top: 10px;
 }
