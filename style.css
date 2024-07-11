@@ -8,7 +8,7 @@ section{
 
 .banner{
   width:100%;
-  background:url('https://cdn-cf-east.streamable.com/image/5eiug7.jpg?Expires=1715783103392&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=dHDfZBdKBIa2OsrjmWmm3nEHtrh~ZTgGSvnVRL45YtKm6VlM~VS~RNN~7AzjMmNOLrh9j~g~y36hZIDNDxJsz-BBk3T-takMteKQJEJ1PYWwSgWJ8la2hFqr3pp7dxPozQAmDjM8TKBqeTGJetSyW-KXfdBY7O8krdkN0TtAmMewWbfm3SKPLtmAEhUlBGYP-xBrNLIG5XrqpR728YlxxO~k8c2GDFtw1iuD~XODguNTQMu-aUskW9ocg1lKnj90mdyuh0Gs2XcQSxeWmC2gSim4HyOPp~oD8H9JqcwFzBuJtWoHoRlV0uHnuqEiodyeKEpUct0jgaVE4IN~pMvzqg__') no-repeat;
+  background:url('assets/banner1.jpg') no-repeat;
   background-size:cover;
   background-position:center;
   min-height:700px;
