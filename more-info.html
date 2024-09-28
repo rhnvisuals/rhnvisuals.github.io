@@ -67,67 +67,83 @@
             <title>More Info</title>
             <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
             <style>
-                /* Basic styles for your content */
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #fff;
-                    color: #000;
-                    margin: 0;
-                    padding: 0;
-                }
-        
-                .container {
-                    max-width: 800px;
-                    margin: auto;
-                    padding: 20px;
-                    background: #f7f7f7;
-                    border-radius: 10px;
-                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-                }
-        
-                .content {
-                    display: none; /* Hide all content initially */
-                }
-        
-                .content.active {
-                    display: block; /* Show active content */
-                }
-        
-                a.see-more-link {
-                    display: inline-block;
-                    margin-top: 5px; /* Smaller margin */
-                    padding: 5px 10px; /* Smaller padding */
-                    background-color: #ec1839;
-                    color: white;
-                    text-decoration: none;
-                    border-radius: 3px; /* Smaller border radius */
-                }
-        
-                .preview-container {
-                    width: 720px; /* Set a smaller width for the preview */
-                    margin: 10px auto; /* Center and add some space around the preview */
-                }
-        
-                .preview-container img, .preview-container video {
-                    max-width: 100%; /* Make sure the content fits within the container */
-                    height: auto; /* Maintain aspect ratio */
-                    border-radius: 5px; /* Slightly rounded corners */
-                    border: 2px solid #ec1839; /* Border matching the button color */
-                }
-        
-                /* Remove background black affecting navigation */
-                .navbar, .navbar * {
-                    background: none !important; /* Remove all background styling */
-                    box-shadow: none; /* Remove shadows */
-                }
-        
-                .navbar {
-                    background-color: transparent; /* Ensure the navbar remains transparent */
-                    border-bottom: none; /* Remove any bottom border */
-                }
-            </style>
-        </head>
-        <body>
+                 /* Basic styles for your content */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #f7f7f7;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            display: none; /* Hide all content initially */
+        }
+
+        .content.active {
+            display: block; /* Show active content */
+        }
+
+        .preview-container {
+            width: 100%; /* Set a flexible width for the preview */
+            max-width: 720px; /* Maximum width for larger screens */
+            margin: 10px auto; /* Center and add some space around the preview */
+        }
+
+        .preview-container img, .preview-container video {
+            width: 100%; /* Make sure the content fits within the container */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 5px; /* Slightly rounded corners */
+            border: 2px solid #ec1839; /* Border matching the button color */
+        }
+
+        a.see-more-link {
+            display: inline-block;
+            margin-top: 5px; /* Smaller margin */
+            padding: 5px 10px; /* Smaller padding */
+            background-color: #ec1839;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px; /* Smaller border radius */
+        }
+
+        /* Remove background black affecting navigation */
+        .navbar, .navbar * {
+            background: none !important; /* Remove all background styling */
+            box-shadow: none; /* Remove shadows */
+        }
+
+        .navbar {
+            background-color: transparent; /* Ensure the navbar remains transparent */
+            border-bottom: none; /* Remove any bottom border */
+        }
+
+        /* Responsive styles for mobile devices */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px; /* Adjust container padding for smaller screens */
+            }
+
+            .preview-container img, .preview-container video {
+                border-width: 1px; /* Thinner border for smaller screens */
+            }
+
+            a.purchase-link {
+                padding: 6px 12px; /* Adjust button padding for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
             <!-- More Info Start -->
             <div class="container">
                 <div id="thumbnails" class="content">
